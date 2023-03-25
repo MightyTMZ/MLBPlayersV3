@@ -1,0 +1,23 @@
+{% extends "homepage_base.html" %}
+
+{% block content %}
+
+<h1>Teams</h1>
+<div class="row">
+
+    {% for team in teams %}
+    <div class="col">
+        <div class="card" style="width: 18rem; margin-bottom: 10vh;">
+            <img class="card-img-top" src="{{ team.img_url }}" alt="Card image cap"
+                 style="border-top-left-radius: 0.5vw; border-top-right-radius: 0.5vw; border: 1px solid black;">
+            <div class="card-body" style="border: 1px solid black; border-top: 0px solid grey;">
+                <h5 class="card-title">{{team.name}}</h5>
+                <p class="card-text">{{ team.division }}</p>
+                <a href="/teams/{{team.identification}}" class="btn btn-primary">View Players</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

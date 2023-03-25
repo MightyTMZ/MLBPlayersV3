@@ -1,0 +1,21 @@
+{% extends "Arizona_Diamondbacks_base.html" %}
+
+{% block content %}
+
+<h1 style="margin-bottom: 40px;">Arizona Diamondbacks Players</h1>
+<div class="row">
+    {% for arizona_diamondback in arizona_diamondbacks %}
+    <div class="col">
+        <div class="card" style="width: 18rem; margin-bottom: 10vh;">
+            <img class="card-img-top" src="{{ arizona_diamondback.img_url }}" alt="Card image cap" style="background: radial-gradient(#000000, rgba(169, 87, 80, 0.8)); border-top-left-radius: 20px; border-top-right-radius: 20px;">
+            <div class="card-body" style="border-top-left-radius: 0.5vw; border-top-right-radius: 0.5vw;">
+                <h5 class="card-title">{{arizona_diamondback.name}}</h5>
+                <p class="card-text">{{ arizona_diamondback.position }}</p>
+                <a href="#" class="btn btn-primary">View Stats</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
